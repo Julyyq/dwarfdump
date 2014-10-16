@@ -1,0 +1,1 @@
+export dSYMPath="$(find ~/Library/Developer/Xcode -iname '*.dSYM' -print0 | xargs -0 dwarfdump -u | grep uuid | sed -E 's/^[^/]+//' | head -n 1)";dwarfdump --arch=armv7s --lookup memoryAddress "$dSYMPath"
